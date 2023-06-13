@@ -1,0 +1,29 @@
+﻿<Page x:Class="Garage2.AddAnAutoBinding"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Garage2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddAnAutoBinding">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Выберите номер машины привязки" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Выберите владельца" HorizontalAlignment="Center"></TextBlock>
+        <ComboBox SelectedItem="{Binding Car}" Grid.Row="0" Grid.Column="1" Name="ComboRegNum" DisplayMemberPath="registrationNumber"></ComboBox>
+        <ComboBox SelectedItem="{Binding CarOwner}" Grid.Row="1" Grid.Column="1" Name="ComboOnwer" DisplayMemberPath="surnameOfTheCarOwner"></ComboBox>
+        <Button Content="Сохранить" Name="SaveAutBinding" Grid.Column="1" Grid.Row="2" Width="100" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top" Click="SaveAutBinding_Click"></Button>
+        
+    </Grid>
+</Page>

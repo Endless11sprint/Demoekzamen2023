@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CarGarageModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="idCar(pk)" />
+          </Key>
+          <Property Name="idCar(pk)" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="registrationNumber" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="model" Type="nchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarOwner">
+          <Key>
+            <PropertyRef Name="idCarOwner(pk)" />
+          </Key>
+          <Property Name="idCarOwner(pk)" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameOfTheCarOwner" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="patronymicOfTheCarOwner" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="surnameOfTheCarOwner" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="phoneNumberOfTheCarOwner" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Garage">
+          <Key>
+            <PropertyRef Name="idGarage(pk)" />
+          </Key>
+          <Property Name="idGarage(pk)" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idOwnersAndTheirCars(fk)" Type="int" Nullable="false" />
+          <Property Name="theGuardWhoPut(fk)" Type="int" Nullable="false" />
+          <Property Name="dateOfPuttingTheCarInTheGarage" Type="datetime" Nullable="false" />
+          <Property Name="dateOfTakingTheCarIntoTheGarage" Type="datetime" />
+          <Property Name="theGuardWhoGaveOut(fk)" Type="int" />
+        </EntityType>
+        <EntityType Name="OwnersAndTheirCars">
+          <Key>
+            <PropertyRef Name="idOwnersAndTheirCars(pk)" />
+          </Key>
+          <Property Name="idOwnersAndTheirCars(pk)" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCar(fk)" Type="int" Nullable="false" />
+          <Property Name="idCarOwner(fk)" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Watchman">
+          <Key>
+            <PropertyRef Name="idWatchman(pk)" />
+          </Key>
+          <Property Name="idWatchman(pk)" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameWatchman" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="surnameWatchman" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="patronymicWatchman" Type="nchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_garage_OwnersAndTheirCars">
+          <End Role="OwnersAndTheirCars" Type="Self.OwnersAndTheirCars" Multiplicity="1" />
+          <End Role="Garage" Type="Self.Garage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OwnersAndTheirCars">
+              <PropertyRef Name="idOwnersAndTheirCars(pk)" />
+            </Principal>
+            <Dependent Role="Garage">
+              <PropertyRef Name="idOwnersAndTheirCars(fk)" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_garage_Watchman">
+          <End Role="Watchman" Type="Self.Watchman" Multiplicity="1" />
+          <End Role="Garage" Type="Self.Garage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Watchman">
+              <PropertyRef Name="idWatchman(pk)" />
+            </Principal>
+            <Dependent Role="Garage">
+              <PropertyRef Name="theGuardWhoPut(fk)" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_garage_Watchman1">
+          <End Role="Watchman" Type="Self.Watchman" Multiplicity="0..1" />
+          <End Role="Garage" Type="Self.Garage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Watchman">
+              <PropertyRef Name="idWatchman(pk)" />
+            </Principal>
+            <Dependent Role="Garage">
+              <PropertyRef Name="theGuardWhoGaveOut(fk)" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OwnersAndTheirCars_Car">
+          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="OwnersAndTheirCars" Type="Self.OwnersAndTheirCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car">
+              <PropertyRef Name="idCar(pk)" />
+            </Principal>
+            <Dependent Role="OwnersAndTheirCars">
+              <PropertyRef Name="idCar(fk)" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OwnersAndTheirCars_CarOwner">
+          <End Role="CarOwner" Type="Self.CarOwner" Multiplicity="1" />
+          <End Role="OwnersAndTheirCars" Type="Self.OwnersAndTheirCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarOwner">
+              <PropertyRef Name="idCarOwner(pk)" />
+            </Principal>
+            <Dependent Role="OwnersAndTheirCars">
+              <PropertyRef Name="idCarOwner(fk)" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CarGarageModelContainer">
+          <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarOwner" EntityType="Self.CarOwner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Garage" EntityType="Self.Garage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OwnersAndTheirCars" EntityType="Self.OwnersAndTheirCars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Watchman" EntityType="Self.Watchman" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_garage_OwnersAndTheirCars" Association="Self.FK_garage_OwnersAndTheirCars">
+            <End Role="OwnersAndTheirCars" EntitySet="OwnersAndTheirCars" />
+            <End Role="Garage" EntitySet="Garage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_garage_Watchman" Association="Self.FK_garage_Watchman">
+            <End Role="Watchman" EntitySet="Watchman" />
+            <End Role="Garage" EntitySet="Garage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_garage_Watchman1" Association="Self.FK_garage_Watchman1">
+            <End Role="Watchman" EntitySet="Watchman" />
+            <End Role="Garage" EntitySet="Garage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OwnersAndTheirCars_Car" Association="Self.FK_OwnersAndTheirCars_Car">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="OwnersAndTheirCars" EntitySet="OwnersAndTheirCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OwnersAndTheirCars_CarOwner" Association="Self.FK_OwnersAndTheirCars_CarOwner">
+            <End Role="CarOwner" EntitySet="CarOwner" />
+            <End Role="OwnersAndTheirCars" EntitySet="OwnersAndTheirCars" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarGarageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="idCar_pk_" />
+          </Key>
+          <Property Name="idCar_pk_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="registrationNumber" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OwnersAndTheirCars" Relationship="Self.FK_OwnersAndTheirCars_Car" FromRole="Car" ToRole="OwnersAndTheirCars" />
+        </EntityType>
+        <EntityType Name="CarOwner">
+          <Key>
+            <PropertyRef Name="idCarOwner_pk_" />
+          </Key>
+          <Property Name="idCarOwner_pk_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameOfTheCarOwner" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="patronymicOfTheCarOwner" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="surnameOfTheCarOwner" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="phoneNumberOfTheCarOwner" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OwnersAndTheirCars" Relationship="Self.FK_OwnersAndTheirCars_CarOwner" FromRole="CarOwner" ToRole="OwnersAndTheirCars" />
+        </EntityType>
+        <EntityType Name="Garage">
+          <Key>
+            <PropertyRef Name="idGarage_pk_" />
+          </Key>
+          <Property Name="idGarage_pk_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idOwnersAndTheirCars_fk_" Type="Int32" Nullable="false" />
+          <Property Name="theGuardWhoPut_fk_" Type="Int32" Nullable="false" />
+          <Property Name="dateOfPuttingTheCarInTheGarage" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateOfTakingTheCarIntoTheGarage" Type="DateTime" Precision="3" />
+          <Property Name="theGuardWhoGaveOut_fk_" Type="Int32" />
+          <NavigationProperty Name="OwnersAndTheirCars" Relationship="Self.FK_garage_OwnersAndTheirCars" FromRole="Garage" ToRole="OwnersAndTheirCars" />
+          <NavigationProperty Name="Watchman" Relationship="Self.FK_garage_Watchman" FromRole="Garage" ToRole="Watchman" />
+          <NavigationProperty Name="Watchman1" Relationship="Self.FK_garage_Watchman1" FromRole="Garage" ToRole="Watchman" />
+        </EntityType>
+        <EntityType Name="OwnersAndTheirCars">
+          <Key>
+            <PropertyRef Name="idOwnersAndTheirCars_pk_" />
+          </Key>
+          <Property Name="idOwnersAndTheirCars_pk_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCar_fk_" Type="Int32" Nullable="false" />
+          <Property Name="idCarOwner_fk_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_OwnersAndTheirCars_Car" FromRole="OwnersAndTheirCars" ToRole="Car" />
+          <NavigationProperty Name="CarOwner" Relationship="Self.FK_OwnersAndTheirCars_CarOwner" FromRole="OwnersAndTheirCars" ToRole="CarOwner" />
+          <NavigationProperty Name="Garage" Relationship="Self.FK_garage_OwnersAndTheirCars" FromRole="OwnersAndTheirCars" ToRole="Garage" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Watchman">
+          <Key>
+            <PropertyRef Name="idWatchman_pk_" />
+          </Key>
+          <Property Name="idWatchman_pk_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameWatchman" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="surnameWatchman" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="patronymicWatchman" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Garage" Relationship="Self.FK_garage_Watchman" FromRole="Watchman" ToRole="Garage" />
+          <NavigationProperty Name="Garage1" Relationship="Self.FK_garage_Watchman1" FromRole="Watchman" ToRole="Garage" />
+        </EntityType>
+        <Association Name="FK_OwnersAndTheirCars_Car">
+          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="OwnersAndTheirCars" Type="Self.OwnersAndTheirCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car">
+              <PropertyRef Name="idCar_pk_" />
+            </Principal>
+            <Dependent Role="OwnersAndTheirCars">
+              <PropertyRef Name="idCar_fk_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OwnersAndTheirCars_CarOwner">
+          <End Role="CarOwner" Type="Self.CarOwner" Multiplicity="1" />
+          <End Role="OwnersAndTheirCars" Type="Self.OwnersAndTheirCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarOwner">
+              <PropertyRef Name="idCarOwner_pk_" />
+            </Principal>
+            <Dependent Role="OwnersAndTheirCars">
+              <PropertyRef Name="idCarOwner_fk_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_garage_OwnersAndTheirCars">
+          <End Role="OwnersAndTheirCars" Type="Self.OwnersAndTheirCars" Multiplicity="1" />
+          <End Role="Garage" Type="Self.Garage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OwnersAndTheirCars">
+              <PropertyRef Name="idOwnersAndTheirCars_pk_" />
+            </Principal>
+            <Dependent Role="Garage">
+              <PropertyRef Name="idOwnersAndTheirCars_fk_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_garage_Watchman">
+          <End Role="Watchman" Type="Self.Watchman" Multiplicity="1" />
+          <End Role="Garage" Type="Self.Garage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Watchman">
+              <PropertyRef Name="idWatchman_pk_" />
+            </Principal>
+            <Dependent Role="Garage">
+              <PropertyRef Name="theGuardWhoPut_fk_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_garage_Watchman1">
+          <End Role="Watchman" Type="Self.Watchman" Multiplicity="0..1" />
+          <End Role="Garage" Type="Self.Garage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Watchman">
+              <PropertyRef Name="idWatchman_pk_" />
+            </Principal>
+            <Dependent Role="Garage">
+              <PropertyRef Name="theGuardWhoGaveOut_fk_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarGarageEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Car" EntityType="Self.Car" />
+          <EntitySet Name="CarOwner" EntityType="Self.CarOwner" />
+          <EntitySet Name="Garage" EntityType="Self.Garage" />
+          <EntitySet Name="OwnersAndTheirCars" EntityType="Self.OwnersAndTheirCars" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Watchman" EntityType="Self.Watchman" />
+          <AssociationSet Name="FK_OwnersAndTheirCars_Car" Association="Self.FK_OwnersAndTheirCars_Car">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="OwnersAndTheirCars" EntitySet="OwnersAndTheirCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OwnersAndTheirCars_CarOwner" Association="Self.FK_OwnersAndTheirCars_CarOwner">
+            <End Role="CarOwner" EntitySet="CarOwner" />
+            <End Role="OwnersAndTheirCars" EntitySet="OwnersAndTheirCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_garage_OwnersAndTheirCars" Association="Self.FK_garage_OwnersAndTheirCars">
+            <End Role="OwnersAndTheirCars" EntitySet="OwnersAndTheirCars" />
+            <End Role="Garage" EntitySet="Garage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_garage_Watchman" Association="Self.FK_garage_Watchman">
+            <End Role="Watchman" EntitySet="Watchman" />
+            <End Role="Garage" EntitySet="Garage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_garage_Watchman1" Association="Self.FK_garage_Watchman1">
+            <End Role="Watchman" EntitySet="Watchman" />
+            <End Role="Garage" EntitySet="Garage" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CarGarageModelContainer" CdmEntityContainer="CarGarageEntities">
+          <EntitySetMapping Name="Car">
+            <EntityTypeMapping TypeName="CarGarageModel.Car">
+              <MappingFragment StoreEntitySet="Car">
+                <ScalarProperty Name="idCar_pk_" ColumnName="idCar(pk)" />
+                <ScalarProperty Name="registrationNumber" ColumnName="registrationNumber" />
+                <ScalarProperty Name="model" ColumnName="model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarOwner">
+            <EntityTypeMapping TypeName="CarGarageModel.CarOwner">
+              <MappingFragment StoreEntitySet="CarOwner">
+                <ScalarProperty Name="idCarOwner_pk_" ColumnName="idCarOwner(pk)" />
+                <ScalarProperty Name="nameOfTheCarOwner" ColumnName="nameOfTheCarOwner" />
+                <ScalarProperty Name="patronymicOfTheCarOwner" ColumnName="patronymicOfTheCarOwner" />
+                <ScalarProperty Name="surnameOfTheCarOwner" ColumnName="surnameOfTheCarOwner" />
+                <ScalarProperty Name="phoneNumberOfTheCarOwner" ColumnName="phoneNumberOfTheCarOwner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Garage">
+            <EntityTypeMapping TypeName="CarGarageModel.Garage">
+              <MappingFragment StoreEntitySet="Garage">
+                <ScalarProperty Name="idGarage_pk_" ColumnName="idGarage(pk)" />
+                <ScalarProperty Name="idOwnersAndTheirCars_fk_" ColumnName="idOwnersAndTheirCars(fk)" />
+                <ScalarProperty Name="theGuardWhoPut_fk_" ColumnName="theGuardWhoPut(fk)" />
+                <ScalarProperty Name="dateOfPuttingTheCarInTheGarage" ColumnName="dateOfPuttingTheCarInTheGarage" />
+                <ScalarProperty Name="dateOfTakingTheCarIntoTheGarage" ColumnName="dateOfTakingTheCarIntoTheGarage" />
+                <ScalarProperty Name="theGuardWhoGaveOut_fk_" ColumnName="theGuardWhoGaveOut(fk)" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OwnersAndTheirCars">
+            <EntityTypeMapping TypeName="CarGarageModel.OwnersAndTheirCars">
+              <MappingFragment StoreEntitySet="OwnersAndTheirCars">
+                <ScalarProperty Name="idOwnersAndTheirCars_pk_" ColumnName="idOwnersAndTheirCars(pk)" />
+                <ScalarProperty Name="idCar_fk_" ColumnName="idCar(fk)" />
+                <ScalarProperty Name="idCarOwner_fk_" ColumnName="idCarOwner(fk)" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CarGarageModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Watchman">
+            <EntityTypeMapping TypeName="CarGarageModel.Watchman">
+              <MappingFragment StoreEntitySet="Watchman">
+                <ScalarProperty Name="idWatchman_pk_" ColumnName="idWatchman(pk)" />
+                <ScalarProperty Name="nameWatchman" ColumnName="nameWatchman" />
+                <ScalarProperty Name="surnameWatchman" ColumnName="surnameWatchman" />
+                <ScalarProperty Name="patronymicWatchman" ColumnName="patronymicWatchman" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

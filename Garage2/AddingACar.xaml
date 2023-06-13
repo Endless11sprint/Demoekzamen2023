@@ -1,0 +1,28 @@
+﻿<Page x:Class="Garage2.AddingACar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Garage2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddingACar">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Регистрационный номер"  HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Модель авто" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="0"  Text="{Binding registrationNumber}" Grid.Column="1" MaxLength="6" Name="TextBoxRegNum"></TextBox>
+        <TextBox Grid.Row="1" Text="{Binding model}" Grid.Column="2" MaxLength="100" Name="TexBoxModel"></TextBox>
+        <Button Content="Сохранить" Name="SaveCar" Grid.Column="1" Grid.Row="2" Width="100" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top" Click="SaveCar_Click"></Button>
+    </Grid>
+</Page>

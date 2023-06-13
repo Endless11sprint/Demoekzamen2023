@@ -1,0 +1,74 @@
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.AssemblyReference.cache
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.SuggestedBindingRedirects.cache
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\GarageTable.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\MainWindow.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\App.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2_Content.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2_MarkupCompile.cache
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2_MarkupCompile.lref
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddAnAutoBinding.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingACar.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddOnwer.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddWatchman.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\LinkingTheMachine.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\Garage2.exe.config
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\Garage2.exe
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\Garage2.pdb
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.dll
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.xml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\GarageTable.baml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\MainWindow.baml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddAnAutoBinding.baml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingACar.baml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddOnwer.baml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddWatchman.baml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\LinkingTheMachine.baml
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.g.resources
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.Properties.Resources.resources
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.GenerateResource.cache
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.CoreCompileInputs.cache
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.CopyComplete
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.exe
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.pdb
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingAGarage.g.cs
+C:\Users\karkr\Desktop\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingAGarage.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\Garage2.exe.config
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\Garage2.exe
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\Garage2.pdb
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.dll
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.xml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.AssemblyReference.cache
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.SuggestedBindingRedirects.cache
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddAnAutoBinding.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingACar.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingAGarage.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddOnwer.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddWatchman.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\GarageTable.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\LinkingTheMachine.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\MainWindow.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\App.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2_Content.g.cs
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2_MarkupCompile.cache
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2_MarkupCompile.lref
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddAnAutoBinding.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingACar.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddingAGarage.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddOnwer.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\AddWatchman.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\GarageTable.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\LinkingTheMachine.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\MainWindow.baml
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.g.resources
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.Properties.Resources.resources
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.GenerateResource.cache
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.CoreCompileInputs.cache
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.csproj.CopyComplete
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.exe
+C:\Users\karkr\Desktop\Производственные практики\Производственная практика декабрь 2022\Garage2\Garage2\obj\Debug\Garage2.pdb
